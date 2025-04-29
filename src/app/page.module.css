@@ -1,0 +1,206 @@
+/* Variables globales (puedes moverlas a globals.css) */
+:global(:root) {
+    --primary: #3a4cb5;
+    --primary-dark: #2f3a9e;
+    --secondary: #34a0b8;
+    --bg-light: #f8fafd;
+    --text-dark: #222;
+    --text-light: #555;
+    --radius: 12px;
+    --transition: 0.3s;
+  }
+  
+  /* Contenedor genérico */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+  }
+  
+  /* Body font */
+  .main {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+  }
+  
+  /* —— Hero Compacto —— */
+  .hero {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+  }
+  .heroContent {
+    z-index: 1;
+    max-width: 700px;
+    padding: 0 1rem;
+  }
+  .heroTitle {
+    font-size: 2.8rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  .heroSubtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  .ctaPrimary {
+    display: inline-block;
+    background: var(--secondary);
+    color: white;
+    padding: 0.6rem 1.8rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background var(--transition), transform var(--transition);
+    animation: fadeInUp 1.2s ease-out forwards;
+  }
+  .ctaPrimary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+  }
+  /* Divider ondulado */
+  .heroWave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23f8fafd' d='M0,32L48,53.3C96,75,192,117,288,117.3C384,117,480,75,576,42.7C672,11,768,11,864,32C960,53,1056,107,1152,117.3C1248,128,1344,96,1392,80L1440,64L1440,80L1392,80C1344,80,1248,80,1152,80C1056,80,960,80,864,80C768,80,672,80,576,80C480,80,384,80,288,80C192,80,96,80,48,80L0,80Z'/%3E%3C/svg%3E") no-repeat bottom/cover;
+  }
+  
+  /* —— “¿Por qué importa?” —— */
+  .why {
+    background: var(--bg-light);
+    padding: 4rem 1rem 2rem;
+  }
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .whyGrid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  }
+  .whyCard {
+    background: white;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .whyCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+  .whyCard i {
+    font-size: 1.75rem;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+  }
+  .whyCard h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  .whyCard p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+  
+  /* —— “Un Proyecto Social y Abierto” —— */
+  .about {
+    background: white;
+    padding: 3rem 1rem 5rem;
+    text-align: center;               /* centra el button y el texto */
+  }
+  .aboutText {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  .featuresGrid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    margin-bottom: 2rem;
+  }
+  .featureCard {
+    background: var(--bg-light);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    transition: background var(--transition), transform var(--transition);
+  }
+  .featureCard:hover {
+    background: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  /* Emoji grande y centrado */
+  .featureEmoji {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .featureCard h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+  .featureCard p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.4;
+  }
+  .ctaSecondary {
+    display: inline-block;           /* conserva inline-block */
+    margin: 0 auto;                   /* lo centra */
+    background: var(--primary-dark);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background var(--transition);
+  }
+  .ctaSecondary:hover {
+    background: var(--primary);
+  }
+  
+  /* —— Animaciones —— */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* —— Responsive —— */
+  @media (max-width: 768px) {
+    .heroTitle {
+      font-size: 2rem;
+    }
+    .heroSubtitle {
+      font-size: 1rem;
+    }
+    .whyGrid,
+    .featuresGrid {
+      grid-template-columns: 1fr;
+    }
+  }
