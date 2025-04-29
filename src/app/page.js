@@ -5,8 +5,6 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <NavBar />
-
       <section className="hero-section">
         <div className="hero-content">
           <h2>Explora el Pensamiento Filosófico</h2>
@@ -45,8 +43,6 @@ export default function Home() {
       </section>
 
       {/* TODO: copia las otras secciones de index.html de la misma forma */}
-
-      <Footer />
     </>
   );
 }

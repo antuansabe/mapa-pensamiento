@@ -11,6 +11,19 @@
     background-color: var(--bg-prim);
     color: #2c2f36;
   }
+  @media (max-width: 768px) {
+    .westernHeader {
+      padding: 4rem 1rem;
+      margin-bottom: 3rem;
+    }
+    .title {
+      font-size: 2.25rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
   
   /* 1. Header */
   .westernHeader {

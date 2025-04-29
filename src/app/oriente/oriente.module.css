@@ -1,0 +1,439 @@
+/* Variables globales (se conservan en :root para que funcionen en todo el sitio) */
+
+  /* Contenedor principal de la página */
+  .orientePage {
+    /* si necesitas un background específico, lo pones aquí */
+  }
+  
+  /* Encabezado */
+  .easternHeader {
+    /* degradado principal */
+    background: linear-gradient(135deg, var(--oriental-primary), #694778);
+    color: #ffffff;
+    text-align: center;
+    padding: 6rem 1rem;
+    margin-bottom: 4rem;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* decorador horizontal opcional */
+  .decorator {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 2rem auto 0;
+    border-radius: 2px;
+  }  
+  
+  /* Buscador */
+  .searchContainer {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .searchInput {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 1rem;
+    color: #ffffff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .searchInput:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: #ffffff;
+  }
+  
+  .searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .searchIcon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  /* ——————————————————————————————————————————————
+     Responsive
+     —————————————————————————————————————————————— */
+  @media (max-width: 768px) {
+    .easternHeader {
+      padding: 4rem 1rem;
+      margin-bottom: 3rem;
+    }
+    .title {
+      font-size: 2.25rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  /* Tradiciones */
+  .traditionsOverview {
+    padding: 5rem 1.5rem;
+    background-color: var(--bg-primary);
+    position: relative;
+  }
+  .traditionsOverview::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/images/subtle-pattern.svg');
+    background-size: 200px;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .sectionIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--oriental-gradient);
+    border-radius: 10px;
+    margin-right: 1rem;
+    color: white;
+  }
+  .traditionsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .traditionCard {
+    background-color: var(--card-background);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .traditionCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--oriental-gradient);
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  .traditionCard:hover::before {
+    opacity: 1;
+  }
+  .traditionCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(156, 70, 103, 0.15);
+  }
+  .traditionIcon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, var(--oriental-primary-light), var(--oriental-primary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    box-shadow: 0 8px 20px rgba(156, 70, 103, 0.25);
+    position: relative;
+  }
+  .traditionIcon::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 1px dashed rgba(156, 70, 103, 0.3);
+    border-radius: 50%;
+    animation: rotate 20s linear infinite;
+  }
+  @keyframes rotate { to { transform: rotate(360deg); } }
+  .btnMore {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--oriental-primary);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btnMore:hover {
+    background-color: var(--oriental-primary-light);
+    box-shadow: 0 4px 12px rgba(156, 70, 103, 0.3);
+  }
+  
+  /* Contexto Histórico */
+  .historicalContext {
+    padding: 4rem 0;
+    background-color: var(--bg-secondary);
+    position: relative;
+  }
+  .historicalContext::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/images/oriental-pattern.svg');
+    background-size: 300px;
+    opacity: 0.03;
+    pointer-events: none;
+  }
+  .timelineContainer {
+    position: relative;
+    margin-top: 2rem;
+    padding: 2rem 0;
+  }
+  .timelineContainer::after {
+    content: '';
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 50%;
+    height: 2px;
+    background: linear-gradient(to right, transparent 0%, var(--border-color) 10%, var(--border-color) 90%, transparent 100%);
+    z-index: 0;
+  }
+  .timelineScroll {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  .timelinePeriod {
+    min-width: 240px;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+  }
+  .timelinePeriod:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(34, 44, 79, 0.12);
+  }
+  .periodYears {
+    font-size: 0.9rem;
+    margin: 0.5rem 0 1rem;
+    color: var(--text-secondary);
+  }
+  .periodIndicator {
+    width: 100%;
+    height: 5px;
+    background-color: var(--primary-light);
+    border-radius: 3px;
+    position: relative;
+  }
+  .periodIndicator::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30%;
+    background-color: var(--primary);
+    border-radius: 3px;
+  }
+  
+  /* Explorar escuelas */
+  .schoolsExplorer {
+    padding: 5rem 1.5rem;
+    background-color: var(--bg-primary);
+  }
+  .filters {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 16px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 6px 20px var(--shadow-color);
+  }
+  .filterChips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .filterChip {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    background: var(--card-background);
+    color: var(--text-secondary);
+    transition: all 0.3s;
+  }
+  .filterChip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(156, 70, 103, 0.15);
+    color: var(--oriental-primary);
+    border-color: var(--oriental-primary);
+  }
+  .filterChip.active {
+    background-color: var(--oriental-primary);
+    color: white;
+    border-color: var(--oriental-primary);
+  }
+  
+  /* Grid de escuelas */
+  .philosophyGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  .philosophyCard {
+    border-top: 4px solid var(--oriental-primary);
+    border-radius: 16px;
+    padding: 1.5rem;
+    background: var(--card-background);
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: all 0.3s;
+  }
+  .philosophyCard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(156, 70, 103, 0.15);
+  }
+  .cardMeta {
+    display: flex;
+    gap: 0.8rem;
+    margin: 1rem 0;
+  }
+  .period {
+    background: var(--bg-secondary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    color: var(--oriental-primary);
+  }
+  .region {
+    background: var(--bg-secondary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+  }
+  .cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .founder {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  
+  /* Conceptos fundamentales */
+  .keyConcepts {
+    padding: 5rem 1.5rem;
+    background: var(--bg-secondary);
+  }
+  .conceptsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  .conceptCard {
+    padding: 2rem;
+    background: var(--card-background);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: all 0.3s;
+    text-align: center;
+  }
+  .conceptCard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(156, 70, 103, 0.15);
+  }
+  .conceptIcon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, var(--oriental-primary-light), var(--oriental-primary));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(45deg);
+  }
+  .traditionTag {
+    display: inline-block;
+    background: rgba(156, 70, 103, 0.1);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    color: var(--oriental-primary);
+  }
+  
+  /* Conexiones */
+  .interconnections {
+    padding: 5rem 1.5rem;
+    background: var(--bg-primary);
+  }
+  .connectionsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .connectionDiagram {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .connectionImage {
+    max-width: 100%;
+    filter: drop-shadow(0 8px 20px rgba(156, 70, 103, 0.15));
+  }
+  .connectionDescription {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .btnInteractive {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--oriental-primary), var(--oriental-primary-light));
+    color: white;
+    border-radius: 10px;
+    transition: all 0.3s;
+    text-align: center;
+  }
+  .btnInteractive:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(156, 70, 103, 0.3);
+  }
