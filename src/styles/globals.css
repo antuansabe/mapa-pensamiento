@@ -1,0 +1,636 @@
+/* Variables y configuración base */
+:root {
+    /* Paleta de colores intelectual/moderna 2024/2025 */
+    --primary: #463f84;         /* Púrpura profundo, sobrio e intelectual */
+    --primary-light: #6e68a0;   /* Versión más clara del primario */
+    --secondary: #227288;       /* Verde-azulado profundo */
+    --accent: #b45a64;          /* Burdeos moderno como acento */
+    
+    /* Colores de fondo */
+    --bg-primary: #f8fafb;      /* Blanco marfil cálido */
+    --bg-secondary: #eff1f6;    /* Gris muy claro con toque azulado */
+    --bg-glass: rgba(248, 250, 251, 0.8);
+    
+    /* Colores de texto */
+    --text-primary: #2c2f36;    /* Negro suave, más amable con la vista */
+    --text-secondary: #505662;  /* Gris oscuro elegante */
+    --text-light: #8b92a5;      /* Gris medio con toque azulado */
+    
+    /* Efectos glassmorphism modernizados */
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-shadow: 0 8px 24px 0 rgba(34, 44, 79, 0.08);
+    --glass-blur: blur(10px);
+    
+    /* Transiciones */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Variables extra para elementos específicos */
+    --card-background: #ffffff;
+    --shadow-color: rgba(34, 44, 79, 0.07);
+    --border-color: #e2e7f0;
+    --oriental-color: #9c4667;  /* Tono rosado-púrpura para filosofía oriental */
+    --occidental-color: #2e6b86; /* Azul profundo para filosofía occidental */
+}
+
+/* Modo oscuro */
+[data-theme="dark"] {
+    --bg-primary: #1a1d24;      /* Fondo oscuro con tono azulado */
+    --bg-secondary: #252a35;    /* Gris oscuro con tono azulado */
+    --bg-glass: rgba(26, 29, 36, 0.8);
+    --text-primary: #f1f2f6;
+    --text-secondary: #b8bfd0;
+    --text-light: #7e8699;
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --card-background: #252a35;
+    --shadow-color: rgba(0, 0, 0, 0.25);
+    --border-color: #38404e;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Encabezado y navegación */
+.main-header {
+    background-color: var(--card-background);
+    box-shadow: 0 2px 16px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.main-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand h1 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    position: relative;
+    transition: all var(--transition-normal);
+}
+
+.nav-link:hover {
+    color: var(--primary);
+    background-color: var(--bg-secondary);
+}
+
+.nav-link.active {
+    color: var(--primary);
+    background-color: rgba(70, 63, 132, 0.08); /* Color primario con baja opacidad */
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 0.6rem;
+    border-radius: 8px;
+    transition: all var(--transition-normal);
+}
+
+.icon-button:hover {
+    color: var(--primary);
+    background-color: var(--bg-secondary);
+}
+
+/* Sección Hero */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 5rem 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h2 {
+    font-size: 2.75rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.hero-content p {
+    font-size: 1.35rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.92;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+/* Sistema de búsqueda */
+.search-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1.15rem 1.25rem;
+    padding-right: 3.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    font-size: 1.05rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    color: white;
+    transition: all var(--transition-normal);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-icon {
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+}
+
+/* Utilidades */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Filtros */
+.filters-section {
+    padding: 2.5rem 1.5rem;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-chips {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-top: 1.2rem;
+}
+
+.filter-chip {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    background: var(--card-background);
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: 0 2px 8px rgba(34, 44, 79, 0.04);
+}
+
+.filter-chip:hover {
+    box-shadow: 0 4px 12px rgba(34, 44, 79, 0.08);
+    transform: translateY(-2px);
+    border-color: var(--primary-light);
+    color: var(--primary);
+}
+
+.filter-chip.active {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(70, 63, 132, 0.2);
+}
+
+/* Grid de escuelas filosóficas */
+.schools-section,
+.concepts-section,
+.philosophers-section {
+    padding: 5rem 1.5rem;
+}
+
+.schools-section {
+    background-color: var(--bg-primary);
+}
+
+.philosophers-section {
+    background-color: var(--bg-secondary);
+}
+
+.schools-section h2,
+.concepts-section h2,
+.philosophers-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    color: var(--primary);
+}
+
+.philosophy-grid,
+.concepts-grid,
+.philosophers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+/* Tarjetas */
+.philosophy-card,
+.concept-card,
+.philosopher-card {
+    background-color: var(--card-background);
+    border-radius: 14px;
+    padding: 1.75rem;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    transition: all var(--transition-normal);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.philosophy-card:hover,
+.concept-card:hover,
+.philosopher-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(34, 44, 79, 0.1);
+}
+
+.philosophy-card h3,
+.concept-card h3,
+.philosopher-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.philosophy-card p {
+    color: var(--text-secondary);
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.card-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.period, .region, .years {
+    font-size: 0.9rem;
+    background-color: var(--bg-secondary);
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.founder {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.btn-more {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.btn-more:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(70, 63, 132, 0.3);
+}
+
+/* Línea temporal */
+.timeline-section {
+    padding: 4rem 0;
+    overflow: hidden;
+    background-color: var(--bg-secondary);
+    position: relative;
+}
+
+.timeline-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--bg-secondary) 0%, transparent 5%, transparent 95%, var(--bg-secondary) 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.timeline-section h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.timeline-container {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 2px;
+    background-color: var(--border-color);
+    z-index: 0;
+}
+
+.timeline-scroll {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-light) var(--bg-secondary);
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.timeline-scroll::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+.timeline-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--primary-light);
+    border-radius: 20px;
+}
+
+.timeline-period {
+    min-width: 240px;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px var(--shadow-color);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-period:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(34, 44, 79, 0.12);
+}
+
+.timeline-period.active {
+    border: 2px solid var(--primary);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(70, 63, 132, 0.18);
+}
+
+.timeline-period h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.period-years {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.period-indicator {
+    width: 100%;
+    height: 5px;
+    background-color: var(--primary-light);
+    border-radius: 3px;
+    margin-top: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.period-indicator::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30%;
+    background-color: var(--primary);
+    border-radius: 3px;
+}
+
+/* Pie de página */
+.main-footer {
+    background-color: var(--bg-secondary);
+    padding: 5rem 1.5rem 2.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.footer-section h3 {
+    color: var(--primary);
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    font-size: 0.95rem;
+}
+
+.footer-section a:hover {
+    color: var(--primary);
+}
+
+.footer-section p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 2.5rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .timeline-scroll {
+        gap: 1.2rem;
+    }
+    
+    .timeline-period {
+        min-width: 200px;
+        padding: 1.2rem;
+    }
+    
+    .filter-chips {
+        justify-content: flex-start;
+        gap: 0.6rem;
+    }
+    
+    .philosophy-grid,
+    .concepts-grid,
+    .philosophers-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mejoras para dispositivos grandes */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1360px;
+    }
+    
+    .hero-content {
+        max-width: 900px;
+    }
+    
+    .hero-content h2 {
+        font-size: 3.2rem;
+    }
+    
+    .philosophy-grid,
+    .concepts-grid,
+    .philosophers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    }
+}
