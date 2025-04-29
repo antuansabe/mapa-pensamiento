@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mapa del Pensamiento Filosófico
 
-## Getting Started
+¡Bienvenido al proyecto **Mapa del Pensamiento**! 🎉
 
-First, run the development server:
+Este repositorio contiene la versión moderna de nuestra plataforma educativa interactiva, donde exploramos la rica historia de las ideas filosóficas en Occidente y Oriente, así como los conceptos y debates que han moldeado el pensamiento humano.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 📖 Descripción
+
+El **Mapa del Pensamiento** ofrece:
+
+- Una **línea de tiempo** interactiva de escuelas filosóficas y conceptos.
+- Un **explorador** de tradiciones (Occidente y Oriente) con filtros y tarjetas detalladas.
+- Un **buscador** de conceptos filosóficos con resaltado en tiempo real.
+- Una sección de **comparación** para analizar y contrastar diferentes escuelas.
+- Rutas de **aprendizaje** y seguimiento de progreso.
+
+En esta migración, hemos reconstruido la plataforma original (HTML/CSS/JS vanilla) usando **Next.js**, **React**, **D3.js** y un **Headless CMS** para facilitar la escalabilidad, el rendimiento y la mantenibilidad.
+
+---
+
+## 🚀 Características
+
+- **App Router** de Next.js para una navegación rápida y SEO-friendly.
+- **Theme Toggle** (claro/oscuro) con persistencia en el navegador.
+- **Componentes React** reutilizables: NavBar, Footer, Timeline, Cards, etc.
+- **Visualizaciones** interactivas con D3.js.
+- **CSS Modules** y variables globales para estilos consistentes.
+- **Despliegue** automático en Vercel (frontend) y Railway (backend).
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend**: Next.js + React
+- **Estilos**: CSS Modules, variables CSS globales
+- **Visualizaciones**: D3.js
+- **Autenticación & Backend**: Supabase (pendiente de integrar)
+- **CMS**: Strapi (pendiente de integrar)
+- **Deployment**: Vercel (frontend), Railway (backend)
+
+---
+
+## 📦 Instalación y desarrollo
+
+1. **Clona el repositorio**:
+   ```bash
+   git clone https://github.com/antuansabe/mapa-pensamiento.git
+   cd mapa-pensamiento
+   ```
+
+2. **Instala dependencias**:
+   ```bash
+   npm install
+   ```
+
+3. **Inicia el servidor de desarrollo**:
+   ```bash
+   npm run dev
+   ```
+
+4. Abre http://localhost:3000 en tu navegador y ¡disfruta de la magia filosófica!
+
+---
+
+## 📂 Estructura del Proyecto
+
+```
+mapa-pensamiento/
+├─ src/
+│  ├─ app/               # Rutas de Next.js (App Router)
+│  │  ├─ layout.js       # Layout global (NavBar, Footer, fonts)
+│  │  └─ page.js         # Home y demás páginas (occidente, oriente ...)
+│  ├─ components/        # Componentes React reutilizables
+│  └─ styles/            # CSS global y módulos CSS
+├─ public/               # Imágenes y assets estáticos
+├─ .gitignore
+├─ package.json
+└─ README.md             # Este archivo
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🤝 Cómo contribuir
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Abre un **issue** si encuentras bugs o tienes ideas.
+2. Crea una **rama** con tu mejora (`git checkout -b feature/nombre`).
+3. Realiza tus cambios y haz **commit** con mensajes claros.
+4. Envía un **pull request** describiendo tu aporte.
 
-## Learn More
+¡Toda contribución es bienvenida! 🌟
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📄 Licencia
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Este proyecto está bajo la licencia [MIT](LICENSE). ¡Siéntete libre de usar y modificar!
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+¡Gracias por visitar **Mapa del Pensamiento**! Siéntete libre de explorar, aprender y compartir. 😊
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
