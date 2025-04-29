@@ -7,21 +7,20 @@ export default function OrientePage() {
     <main className={styles.orientePage}>
       {/* Encabezado */}
       <section className={styles.easternHeader}>
-        <div className="container">
-          <h1>Filosofía Oriental</h1>
-          <p className={styles.subtitle}>
-            Descubre las profundas tradiciones filosóficas de Oriente, desde el Taoísmo y el Confucianismo hasta el Budismo y el Hinduismo.
-          </p>
-          <div className={styles.searchContainer}>
-            <input
-              type="text"
-              className={styles.searchInput}
-              placeholder="Buscar tradiciones o filósofos..."
-            />
-            <i className={`fas fa-search ${styles.searchIcon}`}></i>
-          </div>
-        </div>
-      </section>
+  <div className="container">
+    <h1 className={styles.title}>Filosofía Oriental</h1>
+    <p className={styles.subtitle}>
+      Explora las tradiciones de sabiduría del Este, desde el Tao y el Confucianismo, hasta el Budismo y el Hinduismo.
+    </p>
+    <div className={styles.searchContainer}>
+      <input
+        type="text"
+        className={styles.searchInput}
+        placeholder="Buscar tradiciones o filósofos..."
+      />
+    </div>
+  </div>
+</section>
 
       {/* Tradiciones */}
       <section className={styles.traditionsOverview}>
