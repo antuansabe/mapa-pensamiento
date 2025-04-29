@@ -1,0 +1,228 @@
+/* Variables globales (definidas aquí en :global) */
+:global(:root) {
+    --primary: #3a4cb5;
+    --secondary: #6b7ff2;
+    --tertiary: #34a0b8;
+    --bg-light: #f8fafd;
+    --text-dark: #222;
+    --text-light: #555;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    background-color: var(--bg-light);
+  }
+  
+  /* —— Hero —— */
+  .hero {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .search {
+    display: flex;
+    justify-content: center;
+  }
+  .searchInput {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border-radius: 30px;
+    border: none;
+    font-size: 1rem;
+    position: relative;
+  }
+  .searchIcon {
+    position: absolute;
+    left: calc(50% - 200px + 1rem);
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+  }
+  
+  /* —— Categorías —— */
+  .categoriesSection {
+    margin-bottom: 3rem;
+  }
+  .categoriesSection h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    text-align: center;
+  }
+  .categoriesGrid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .categoryCard {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform .3s, box-shadow .3s;
+  }
+  .categoryCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  .categoryCard i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: .75rem;
+  }
+  .categoryCard h3 {
+    font-size: 1.25rem;
+    margin-bottom: .5rem;
+    color: var(--text-dark);
+  }
+  .categoryCard p {
+    font-size: .9rem;
+    color: var(--text-light);
+  }
+  
+  /* —— Línea de Tiempo —— */
+  .timelineSection {
+    margin-bottom: 3rem;
+  }
+  .timelineSection h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    text-align: center;
+  }
+  .timeline {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: .5rem;
+    scroll-snap-type: x mandatory;
+  }
+  .timelineItem {
+    flex: 0 0 auto;
+    min-width: 200px;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    scroll-snap-align: start;
+    transition: transform .3s;
+  }
+  .timelineItem:hover {
+    transform: translateY(-3px);
+  }
+  .period {
+    display: block;
+    font-weight: 600;
+    margin-bottom: .5rem;
+    color: var(--primary);
+  }
+  .timelineItem ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .timelineItem li {
+    font-size: .9rem;
+    color: var(--text-light);
+    margin-bottom: .25rem;
+  }
+  
+  /* —— Repositorio de Conceptos —— */
+  .explorerSection {
+    margin-bottom: 3rem;
+  }
+  .explorerSection h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    text-align: center;
+  }
+  .conceptsGrid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .conceptCard {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 1.5rem;
+    position: relative;
+    transition: transform .3s, box-shadow .3s;
+  }
+  .conceptCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  .conceptCard h3 {
+    font-size: 1.2rem;
+    margin-bottom: .75rem;
+    color: var(--primary);
+  }
+  .conceptCard p {
+    font-size: .9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  .tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--secondary);
+    color: white;
+    padding: .25rem .75rem;
+    border-radius: 20px;
+    font-size: .8rem;
+  }
+  .conceptCard button {
+    margin-top: .5rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 20px;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: background .3s;
+  }
+  .conceptCard button:hover {
+    background: var(--tertiary);
+  }
+  
+  /* —— Responsive —— */
+  @media (max-width: 600px) {
+    .hero {
+      padding: 3rem 1rem;
+    }
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .categoriesGrid,
+    .conceptsGrid {
+      grid-template-columns: 1fr;
+    }
+    .timeline {
+      gap: .75rem;
+    }
+    .timelineItem {
+      min-width: 150px;
+    }
+  }

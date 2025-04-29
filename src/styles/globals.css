@@ -36,10 +36,16 @@
    /*para pagina oriente*/
    --oriental-primary: #9c4667;
   --oriental-primary-light: #c86b89;
+
+   /*para pagina conceptos*/
+   --conceptos-primary: #3a4cb5;
+   --conceptos-primary-light: #5d6eca;
+   --conceptos-secondary: #6b7ff2;
 }
 
 /* Modo oscuro */
 [data-theme="dark"] {
+    --conceptos-bg-primary: #12162c;
     --oriental-primary-light: #b25f7c;
     --bg-primary: #1a1d24;      /* Fondo oscuro con tono azulado */
     --bg-secondary: #252a35;    /* Gris oscuro con tono azulado */
