@@ -7,8 +7,8 @@ export default function NavBar() {
     { href: "/occidente", label: "Occidente" },
     { href: "/oriente", label: "Oriente" },
     { href: "/conceptos", label: "Conceptos" },
-    { href: "/compare", label: "Comparar" },
-    { href: "/learning", label: "Aprender" },
+    { href: "/comparar", label: "Comparar" },
+    { href: "/aprender", label: "Aprender" },
   ];
 
   return (
