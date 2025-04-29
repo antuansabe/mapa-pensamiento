@@ -1,5 +1,6 @@
 // src/components/NavBar.js
 import Link from "next/link";
+import styles from './NavBar.module.css';
 
 export default function NavBar() {
   const links = [
@@ -12,21 +13,21 @@ export default function NavBar() {
   ];
 
   return (
-    <header className="main-header">
-      <nav className="main-nav">
-        <Link href="/" className="nav-brand">
+    <header className={styles.navbar}>
+      <nav className={styles.navContainer}>
+        <Link href="/" className={styles.logo}>
           <h1>
             <i className="fas fa-brain"></i> Mapa del Pensamiento
           </h1>
         </Link>
-        <div className="nav-links">
+        <div className={styles.menu}>
           {links.map(({ href, label }) => (
-            <Link key={href} href={href} className="nav-link">
+            <Link key={href} href={href} className={styles.menuItem}>
               {label}
             </Link>
           ))}
         </div>
-        <button className="icon-button theme-toggle">
+        <button className={styles.toggle}>
           <i className="fas fa-moon"></i>
         </button>
       </nav>
