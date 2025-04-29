@@ -1,6 +1,8 @@
 // src/app/layout.js
 
 import "@/styles/globals.css";
+import NavBar from "../components/NavBar";
+import Footer  from "../components/Footer";
 import { Geist, Geist_Mono } from "next/font/google";
 
 const geistSans = Geist({
@@ -22,7 +24,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
-        {children}
+      <NavBar />        {/* ← aquí */}
+        <main>{children}</main>
+        <Footer />        {/* ← y aquí */}
       </body>
     </html>
   );

@@ -1,0 +1,197 @@
+:root {
+    --occ-pri: #2e6b86;
+    --occ-sec: #6a9a78;
+    --occ-ter: #4a5d8f;
+    --bg-prim: #f5f8fa;
+    --bg-sec: #edf1f5;
+    --text-sec: #505662;
+  }
+  
+  .occidentePage {
+    background-color: var(--bg-prim);
+    color: #2c2f36;
+  }
+  
+  /* 1. Header */
+  .westernHeader {
+    background: linear-gradient(135deg, var(--occ-pri), var(--occ-ter));
+    color: white;
+    padding: 5rem 1rem;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .westernHeader h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .subtitle {
+    font-size: 1.35rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: center;
+  }
+  .searchContainer {
+    text-align: center;
+  }
+  .searchInput {
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    border: 2px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.15);
+    color: white;
+  }
+  
+  /* 2. Timeline */
+  .periodsSection {
+    background: var(--bg-sec);
+    padding: 4rem 0;
+  }
+  .periodsSection h2 {
+    text-align: center;
+    color: var(--occ-pri);
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  .sectionIcon {
+    margin-right: .5rem;
+  }
+  .timelineContainer {
+    position: relative;
+  }
+  .timelineScroll {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem;
+  }
+  .timelinePeriod {
+    min-width: 220px;
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  }
+  .periodYears {
+    font-size: .9rem;
+    color: var(--text-sec);
+    margin-bottom: .5rem;
+  }
+  .periodDesc {
+    font-size: .95rem;
+    margin-bottom: .5rem;
+    color: var(--text-sec);
+  }
+  .periodIndicator {
+    height: 5px;
+    background: var(--occ-pri);
+    border-radius: 3px;
+  }
+  
+  /* 3. Schools explorer */
+  .schoolsExplorer {
+    padding: 4rem 0;
+    background: var(--bg-prim);
+  }
+  .filters {
+    margin-bottom: 2rem;
+  }
+  .filterChips {
+    display: flex;
+    gap: .8rem;
+    flex-wrap: wrap;
+  }
+  .filterChip {
+    padding: .5rem 1rem;
+    border: 1px solid var(--occ-pri);
+    border-radius: 20px;
+    background: white;
+    cursor: pointer;
+    transition: .2s;
+  }
+  .filterChip:hover {
+    background: var(--occ-pri);
+    color: white;
+  }
+  .philosophyGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 2rem;
+  }
+  .philosophyCard {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  .cardMeta {
+    display: flex;
+    gap: .5rem;
+    margin-bottom: .8rem;
+  }
+  .periodTag {
+    background: var(--bg-sec);
+    padding: .2rem .6rem;
+    border-radius: 12px;
+    color: var(--occ-pri);
+    font-size: .85rem;
+  }
+  .regionTag {
+    background: rgba(106,154,120,0.1);
+    padding: .2rem .6rem;
+    border-radius: 12px;
+    color: var(--occ-sec);
+    font-size: .85rem;
+  }
+  .btnMore {
+    background: var(--occ-pri);
+    color: white;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  /* 4. Conceptos clave */
+  .keyConcepts {
+    padding: 4rem 0;
+    background: var(--bg-sec);
+  }
+  .conceptsGrid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  }
+  
+  /* 5. Mapa de influencias */
+  .influencesMap {
+    padding: 4rem 0;
+    background: var(--bg-prim);
+    text-align: center;
+  }
+  .influencesDesc {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    color: var(--text-sec);
+  }
+  .influencesViz {
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* 6. Filósofos */
+  .philosophersSpotlight {
+    padding: 4rem 0;
+    background: var(--bg-sec);
+  }
+  .philosophersCarousel {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  }
