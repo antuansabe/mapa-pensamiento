@@ -44,7 +44,11 @@ export default function OrientePage() {
                 </div>
                 <h3>{title}</h3>
                 <p>{text}</p>
-                <a href={title === 'Taoísmo' ? '/taoismo' : '#'} className={styles.btnMore}>Explorar</a>
+                <a href={
+                  title === 'Taoísmo' ? '/taoismo' : 
+                  title === 'Confucianismo' ? '/confucianismo' : 
+                  '#'
+                } className={styles.btnMore}>Explorar</a>
               </div>
             ))}
           </div>
