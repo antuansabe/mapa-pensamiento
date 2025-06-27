@@ -1,0 +1,620 @@
+/* Página de Taoismo */
+
+/* Contenedor principal */
+.taoismoPage {
+  min-height: 100vh;
+}
+
+/* Encabezado */
+.taoismoHeader {
+  background: linear-gradient(135deg, #682f4e, #442c6e);
+  color: #ffffff;
+  text-align: center;
+  padding: 5rem 1rem;
+  margin-bottom: 4rem;
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.taoismoHeader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  opacity: 0.95;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+/* Sección de introducción */
+.introduction {
+  padding: 5rem 1.5rem;
+  background-color: var(--bg-primary);
+}
+
+.introContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.introText h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--oriental-primary);
+  font-family: 'Inter', sans-serif;
+}
+
+.introText p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* Símbolo Tao */
+.taoSymbol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.yinYang {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #000 0%, #000 50%, #fff 50%, #fff 100%);
+  position: relative;
+  animation: rotate 20s linear infinite;
+  box-shadow: 0 10px 30px rgba(156, 70, 103, 0.2);
+}
+
+.yinYang::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+.yinYang::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background: #000;
+  transform: translateX(-50%);
+}
+
+.yang {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 25%;
+  height: 25%;
+  border-radius: 50%;
+  background: #000;
+  transform: translateX(-50%);
+}
+
+.yin {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  width: 25%;
+  height: 25%;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Figuras clave */
+.keyFigures {
+  padding: 5rem 1.5rem;
+  background-color: var(--bg-secondary);
+}
+
+.sectionIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--oriental-gradient, linear-gradient(135deg, var(--oriental-primary-light), var(--oriental-primary)));
+  border-radius: 10px;
+  margin-right: 1rem;
+  color: white;
+}
+
+.figuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.figureCard {
+  background-color: var(--card-background);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.figureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--oriental-gradient, linear-gradient(135deg, var(--oriental-primary-light), var(--oriental-primary)));
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.figureCard:hover::before {
+  opacity: 1;
+}
+
+.figureCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(156, 70, 103, 0.15);
+}
+
+.figureIcon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--oriental-primary-light), var(--oriental-primary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.8rem;
+  box-shadow: 0 8px 20px rgba(156, 70, 103, 0.25);
+}
+
+.figureCard h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.figureMeta {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.period,
+.role {
+  background: var(--bg-secondary);
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--oriental-primary);
+}
+
+.figureCard p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Conceptos fundamentales */
+.concepts {
+  padding: 5rem 1.5rem;
+  background-color: var(--bg-primary);
+}
+
+.conceptsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.conceptCard {
+  background-color: var(--card-background);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.conceptCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--oriental-gradient, linear-gradient(135deg, var(--oriental-primary-light), var(--oriental-primary)));
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.conceptCard:hover::before {
+  opacity: 1;
+}
+
+.conceptCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(156, 70, 103, 0.15);
+}
+
+.conceptIcon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--oriental-primary-light), var(--oriental-primary));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  transform: rotate(45deg);
+}
+
+.conceptIcon i {
+  transform: rotate(-45deg);
+}
+
+.conceptCard h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.conceptCard h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--oriental-primary);
+  font-style: italic;
+}
+
+.conceptCard p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Textos sagrados */
+.sacredTexts {
+  padding: 5rem 1.5rem;
+  background-color: var(--bg-secondary);
+}
+
+.textsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+  margin-top: 2.5rem;
+}
+
+.textCard {
+  background-color: var(--card-background);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.textCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--oriental-gradient, linear-gradient(135deg, var(--oriental-primary-light), var(--oriental-primary)));
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.textCard:hover::before {
+  opacity: 1;
+}
+
+.textCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(156, 70, 103, 0.15);
+}
+
+.textIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--oriental-primary-light), var(--oriental-primary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 8px 20px rgba(156, 70, 103, 0.25);
+}
+
+.textCard h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.textMeta {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.textMeta span {
+  background: var(--bg-secondary);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--oriental-primary);
+  font-weight: 500;
+}
+
+.textCard p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.famousQuote {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--oriental-primary);
+}
+
+.famousQuote blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.famousQuote cite {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-style: normal;
+}
+
+/* Prácticas */
+.practices {
+  padding: 5rem 1.5rem;
+  background-color: var(--bg-primary);
+}
+
+.practicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.practiceCard {
+  background-color: var(--card-background);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.practiceCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--oriental-gradient, linear-gradient(135deg, var(--oriental-primary-light), var(--oriental-primary)));
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.practiceCard:hover::before {
+  opacity: 1;
+}
+
+.practiceCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(156, 70, 103, 0.15);
+}
+
+.practiceIcon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--oriental-primary-light), var(--oriental-primary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 8px 20px rgba(156, 70, 103, 0.25);
+}
+
+.practiceCard h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.practiceCard p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Influencia moderna */
+.modernInfluence {
+  padding: 5rem 1.5rem;
+  background-color: var(--bg-secondary);
+}
+
+.influenceContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.influenceText {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.influenceText p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.modernApplications {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.applicationCard {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.applicationCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(156, 70, 103, 0.15);
+}
+
+.applicationCard h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--oriental-primary);
+}
+
+.applicationCard p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .taoismoHeader {
+    padding: 4rem 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .introContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .introText h2 {
+    font-size: 2rem;
+  }
+  
+  .yinYang {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .figuresGrid,
+  .conceptsGrid,
+  .practicesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .textsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modernApplications {
+    grid-template-columns: 1fr;
+  }
+}
