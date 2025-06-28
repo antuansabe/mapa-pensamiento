@@ -1,26 +1,16 @@
-/* Variables globales (puedes moverlas a globals.css) */
-:global(:root) {
-    --primary: #3a4cb5;
-    --primary-dark: #2f3a9e;
-    --secondary: #34a0b8;
-    --bg-light: #f8fafd;
-    --text-dark: #222;
-    --text-light: #555;
-    --radius: 12px;
-    --transition: 0.3s;
-  }
+/* Estilos locales para page */
   
   /* Contenedor genérico */
   .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 1rem;
+    padding: 5rem 1.5rem;
   }
   
   /* Body font */
   .main {
     font-family: 'Inter', sans-serif;
-    color: var(--text-dark);
+    color: var(--text-primary);
   }
   
   /* —— Hero Compacto —— */
@@ -31,7 +21,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     color: #fff;
     text-align: center;
     overflow: hidden;
@@ -55,18 +45,20 @@
   }
   .ctaPrimary {
     display: inline-block;
-    background: var(--secondary);
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     color: white;
-    padding: 0.6rem 1.8rem;
+    padding: 0.75rem 1.8rem;
     border-radius: var(--radius);
     font-weight: 600;
+    font-size: 0.95rem;
     text-decoration: none;
-    transition: background var(--transition), transform var(--transition);
+    box-shadow: 0 4px 12px rgba(70, 63, 132, 0.2);
+    transition: all var(--transition-normal);
     animation: fadeInUp 1.2s ease-out forwards;
   }
   .ctaPrimary:hover {
-    background: var(--primary-dark);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(70, 63, 132, 0.3);
   }
   /* Divider ondulado */
   .heroWave {
@@ -167,16 +159,19 @@
   .ctaSecondary {
     display: inline-block;           /* conserva inline-block */
     margin: 0 auto;                   /* lo centra */
-    background: var(--primary-dark);
+    background: linear-gradient(135deg, var(--secondary), #2c8296);
     color: white;
-    padding: 0.6rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     border-radius: var(--radius);
     font-weight: 600;
+    font-size: 0.95rem;
     text-decoration: none;
-    transition: background var(--transition);
+    box-shadow: 0 4px 12px rgba(34, 114, 136, 0.2);
+    transition: all var(--transition-normal);
   }
   .ctaSecondary:hover {
-    background: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(34, 114, 136, 0.3);
   }
   
   /* —— Animaciones —— */

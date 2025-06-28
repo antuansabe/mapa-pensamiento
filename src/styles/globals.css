@@ -41,6 +41,23 @@
    --conceptos-primary: #3a4cb5;
    --conceptos-primary-light: #5d6eca;
    --conceptos-secondary: #6b7ff2;
+
+   /* Variables adicionales para compatibilidad */
+   --bg-light: var(--bg-secondary);
+   --text-dark: var(--text-primary);
+   --radius: 12px;
+   --transition: var(--transition-normal);
+
+   /* Variables para página occidente */
+   --occ-pri: var(--occidental-color);
+   --occ-sec: #4a8ca8;
+   --occ-ter: #6ba1bb;
+   --bg-prim: var(--bg-primary);
+   --bg-sec: var(--bg-secondary);
+   --text-sec: var(--text-secondary);
+
+   /* Variables para navegación */
+   --accent-color: var(--primary);
 }
 
 /* Modo oscuro */
@@ -72,6 +89,69 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Estilos de botones universales */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    box-shadow: 0 4px 12px rgba(70, 63, 132, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(70, 63, 132, 0.3);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--secondary), #2c8296);
+    color: white;
+    box-shadow: 0 4px 12px rgba(34, 114, 136, 0.2);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(34, 114, 136, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Estilos de tarjetas universales */
+.card {
+    background: var(--card-background);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: 0 4px 16px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-normal);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(34, 44, 79, 0.1);
 }
 
 /* Encabezado y navegación */

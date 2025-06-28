@@ -1,11 +1,4 @@
-:root {
-  --occ-pri: #2e6b86;
-  --occ-sec: #6a9a78;
-  --occ-ter: #4a5d8f;
-  --bg-prim: #f5f8fa;
-  --bg-sec: #edf1f5;
-  --text-sec: #505662;
-}
+/* Estilos locales para occidente */
 
 .occidentePage {
   background-color: var(--bg-prim);
@@ -14,18 +7,23 @@
 
 /* 1. Cabecera elegante */
 .westernHeader {
-  background: linear-gradient(135deg, rgba(46,107,134,0.85), rgba(74,93,143,0.85));
-  padding: 6rem 2rem;
+  background: linear-gradient(135deg, var(--occidental-color), var(--primary));
+  padding: 5rem 1.5rem;
   text-align: center;
   color: white;
 }
 .westernHeader h1 {
-  font-size: 3.2rem;
-  margin-bottom: 0.8rem;
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 .subtitle {
-  font-size: 1.3rem;
-  opacity: 0.9;
+  font-size: 1.2rem;
+  opacity: 0.92;
+  line-height: 1.6;
+  font-weight: 300;
 }
 .searchInput {
   padding: 1rem 1.5rem;
@@ -43,14 +41,16 @@
 
 /* 2. Línea de Tiempo interactiva */
 .periodsSection {
-  background: var(--bg-sec);
-  padding: 5rem 0;
+  background: var(--bg-secondary);
+  padding: 5rem 1.5rem;
   text-align: center;
 }
 .periodsSection h2 {
-  font-size: 2.4rem;
-  margin-bottom: 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
   color: var(--occ-pri);
+  letter-spacing: -0.02em;
 }
 .timelineContainer {
   overflow-x: auto;
@@ -63,14 +63,16 @@
 }
 .timelinePeriod {
   min-width: 240px;
-  background: white;
-  border-radius: 12px;
+  background: var(--card-background);
+  border-radius: var(--radius);
   padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-normal);
 }
 .timelinePeriod:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(34, 44, 79, 0.12);
 }
 .periodYears {
   font-size: 0.9rem;
@@ -90,14 +92,16 @@
 
 /* 3. Explorador de escuelas con filtros mejorados */
 .schoolsExplorer {
-  padding: 5rem 0;
-  background: var(--bg-prim);
+  padding: 5rem 1.5rem;
+  background: var(--bg-primary);
 }
 .schoolsExplorer h2 {
-  font-size: 2.4rem;
+  font-size: 2rem;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   color: var(--occ-pri);
+  letter-spacing: -0.02em;
 }
 .filters {
   display: flex;
@@ -111,17 +115,22 @@
   justify-content: center;
 }
 .filterChip {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   border: 1px solid var(--occ-pri);
   border-radius: 20px;
   background: white;
+  color: var(--occ-pri);
+  font-weight: 600;
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(46, 107, 134, 0.1);
+  transition: all var(--transition-normal);
 }
 .filterChip:hover, .filterChip.active {
-  background: var(--occ-pri);
+  background: linear-gradient(135deg, var(--occ-pri), var(--occ-sec));
   color: white;
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 107, 134, 0.3);
 }
 
 .philosophyGrid {
@@ -130,15 +139,16 @@
   gap: 2rem;
 }
 .philosophyCard {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--card-background);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: 0 4px 16px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-normal);
 }
 .philosophyCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(34, 44, 79, 0.1);
 }
 .cardMeta {
   display: flex;
@@ -159,16 +169,20 @@
   color: var(--occ-sec);
 }
 .btnMore {
-  background: linear-gradient(to right, var(--occ-pri), var(--occ-ter));
+  background: linear-gradient(135deg, var(--occ-pri), var(--occ-sec));
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  box-shadow: 0 4px 12px rgba(46, 107, 134, 0.2);
+  transition: all var(--transition-normal);
 }
 .btnMore:hover {
-  opacity: 0.8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(46, 107, 134, 0.3);
 }
 
 /* Espaciado general sin selector global */
@@ -181,7 +195,7 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 
 /* Responsive */
